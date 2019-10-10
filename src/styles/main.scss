@@ -413,24 +413,6 @@ a {
 }
 /* ========================================== SECTION JS ========================================== */
 
-/* ========================================== STYLEGUIDE ========================================== */
-.styleguide {
-    padding: 90px 0 145px;
-}
-.dropdown-text {
-    color: #2e211c;
-    font: 300 14px $roboto;
-    margin-bottom: 25px;
-}
-.dropdown-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-.dropdown-item {
-    flex: 1;
-}
-/* ========================================== STYLEGUIDE ========================================== */
 
 @media screen and (min-width: 1800px) {
     .main::before {
