@@ -1,0 +1,106 @@
+doctype html
+html(lang="ru")
+	head
+		include ../views/blocks/head.pug
+	body
+		include ../views/blocks/header.pug
+		main.main
+			.container
+				h1.main__title Анкета
+				section.section.section--bio#bio
+					.icon
+						img(src="img/icon.svg", alt="Icon")
+					h2.section__title Личная информация
+					form.section--bio__form
+						.section--bio__block
+							input#bio.section--bio__field(type="text" required)
+							label(for="bio").section--bio__label ФИО
+						.section--bio__block
+							select(name="year" data-placeholder="Год рождения").section--bio__select
+								option(value="")
+								option(value="1998") 1998
+								option(value="1997") 1997
+								option(value="1996") 1996
+								option(value="1995") 1995
+								option(value="1994") 1994
+								option(value="1993") 1993
+								option(value="1992") 1992
+								option(value="1991") 1991
+								option(value="1990") 1990
+						.section--bio__block
+							input#place.section--bio__field(type="text" required)
+							label(for="place").section--bio__label Место проживания
+						.section--bio__block
+							input#skype.section--bio__field(type="text" required)
+							label(for="skype").section--bio__label Skype
+						.section--bio__block
+							input#email.section--bio__field(type="email" required)
+							label(for="#email").section--bio__label E-mail
+				section.section.section--js#js
+					.icon
+						img(src="img/js.svg", alt="Icon")
+					h2.section__title Уровень владения JavaScript
+					.js-slider
+						input(type="text" name="my_range" value="").js-range-slider
+				section.section.section--experience#exp
+					.icon
+						img(src="img/exp.svg", alt="Icon")
+					h2.section__title Расскажите о своем опыте
+					form.skill-form
+						ul.skill-list
+							li.skill-item
+								.skill-block
+									input(type="checkbox")#skill-1.skill-input
+									label(for="skill-1").skill-fake
+								label(for="skill-1").skill-name БЭМ/OOCSS
+							li.skill-item
+								.skill-block
+									input(type="checkbox")#skill-2.skill-input
+									label(for="skill-2").skill-fake
+								label(for="skill-2").skill-name Stylus/LESS/SASS
+							li.skill-item
+								.skill-block
+									input(type="checkbox")#skill-3.skill-input
+									label(for="skill-3").skill-fake
+								label(for="skill-3").skill-name Работаю с SVG
+						ul.skill-list
+							li.skill-item
+								.skill-block
+									input(type="checkbox")#skill-4.skill-input
+									label(for="skill-4").skill-fake
+								label(for="skill-4").skill-name Верстаю семантично
+							li.skill-item
+								.skill-block
+									input(type="checkbox")#skill-5.skill-input
+									label(for="skill-5").skill-fake
+								label(for="skill-5").skill-name ES2015/ES2016
+							li.skill-item
+								.skill-block
+									input(type="checkbox")#skill-6.skill-input
+									label(for="skill-6").skill-fake
+								label(for="skill-6").skill-name Gulp/GRUNT
+						ul.skill-list
+							li.skill-item
+								.skill-block
+									input(type="checkbox")#skill-7.skill-input
+									label(for="skill-7").skill-fake
+								label(for="skill-7").skill-name Webpack
+							li.skill-item
+								.skill-block
+									input(type="checkbox")#skill-8.skill-input
+									label(for="skill-8").skill-fake
+								label(for="skill-8").skill-name jQuery
+							li.skill-item
+								.skill-block
+									input(type="checkbox")#skill-9.skill-input
+									label(for="skill-9").skill-fake
+								label(for="skill-9").skill-name Ипользую Git
+				section.section.section--about#about
+					.icon
+						img(src="img/about.svg", alt="Icon")
+					h2.section__title Расскажите о себе
+					p.section-intro Напишите несколько предложений, чем привлекла наша вакансия<br/>и что вы ожидаете от работы у нас.
+					form.about-form
+						textarea.about-textarea(placeholder="Понравилась тем, что...")
+						button(type="submit").about-submit Готово
+		include ../views/blocks/scripts.pug

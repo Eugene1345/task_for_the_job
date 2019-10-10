@@ -1,0 +1,473 @@
+@import "./partials/normalize";
+@import "./partials/variables";
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+    background: #fff;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 768px;
+    position: relative;
+    height: 100%; }
+
+img {
+    max-width: 100%;
+    object-fit: cover; 
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    transition: $transition;
+}
+
+/* ========================================== HEADER ========================================== */
+.header {
+    background: #fff;
+    padding: 35px 0;
+}
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__link {
+        font: 300 14px $roboto;
+        color: #435993;
+        transition: $transition;
+        &:hover {
+            color: #1c1c1c;
+        }
+    }
+    &__item {
+        margin-right: 75px;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+.burger {
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background: #fff;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+    span {
+        width: 30px;
+        height: 1px;
+        background: #435993;
+        display: block;
+    }
+}
+.mobile-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #fff;
+    padding: 20px;
+    width: 260px;
+    z-index: 25;
+    box-shadow: 0 0px 15px rgba(0,0,0,.2);
+    height: 100%;
+    display: none;
+    .menu__item {
+        margin: 10px;
+    }
+}
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    z-index: 24;
+    display: none;
+}
+/* ========================================== HEADER ========================================== */
+
+/* ========================================== MAIN ========================================== */
+.main {
+    padding: 130px 0 70px;
+    position: relative;
+    &::before {
+        content: '';
+        width: 100%;
+        height: 190px;
+        background: url(../img/bg-1.png) no-repeat top center / cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    &__title {
+        text-align: center;
+        margin-bottom: 70px;
+        font: 100 70px $roboto;
+        color: #000000;
+    }
+}
+/* ========================================== MAIN ========================================== */
+
+/* ========================================== SECTION BIO ========================================== */
+.section.section--bio {
+    margin-bottom: 70px;
+}
+.icon {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.section {
+    margin-bottom: 50px;
+}
+.section__title {
+    margin-bottom: 45px;
+    text-align: center;
+    font: 300 30px $roboto;
+    color: #1c1c1c;
+}
+.section--bio__form {
+    text-align: center;
+}
+.section--bio__field {
+    width: 100%;
+    max-width: 520px;
+    height: 60px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    text-align: center;
+    transition: $transition;
+    outline: none;
+    font: 400 20px $roboto;
+    color: #1c1c1c;
+    &:focus , &:valid {
+        border-color: #435993;
+        padding-top: 10px;
+        & + .section--bio__label {
+            font-size: 14px;
+            top: 5px;
+            transform: translate(-50%,0);
+        }
+    }
+}
+.jq-selectbox {
+    height: 60px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    background: none;
+    max-width: 320px;
+    width: 100%;
+    &.opened .jq-selectbox__select {
+        background: url(../img/up.png) no-repeat 95% 50%;   
+    }
+}
+.jq-selectbox__select {
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    background: url(../img/down.png) no-repeat 95% 50%;
+    box-shadow: none;
+    text-shadow: none;
+    font: 400 24px $roboto;
+    color: #c8c8c8;
+    display: flex;
+    align-items: center;
+}
+.jq-selectbox__trigger {
+    display: none;
+}
+.jq-selectbox__select:hover {
+    background: url(../img/down.png) no-repeat 95% 50%;
+}
+.jq-selectbox.opened .jq-selectbox__select:hover {
+    background: url(../img/up.png) no-repeat 95% 50%;   
+}
+.jq-selectbox li {
+    font: 300 20px $roboto;
+    color: #435993;
+    &:hover , &.selected{
+        color: #435993;
+        background: #fff;
+    }
+}
+.jq-selectbox .placeholder {
+    color: #c8c8c8;
+}
+.jq-selectbox__dropdown {
+    padding: 30px;
+    max-height: 300px;
+    overflow: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+.section--bio__block {
+    position: relative;
+    margin-bottom: 25px;
+}
+.section--bio__label {
+    font: 400 24px $roboto;
+    color: #c8c8c8;
+    position: absolute;
+    left: 50%;
+    transition: $transition;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+/* ========================================== SECTION BIO ========================================== */
+
+/* ========================================== SECTION EXPERIENCE ========================================== */
+.section--experience .section__title {
+    margin-bottom: 55px;
+}
+.section.section--experience {
+    margin-bottom: 130px;
+}
+.skill-form {
+    display: flex;
+    justify-content: space-between;
+}
+.skill-list {
+    flex-basis: 33.3%;
+}
+.skill-name {
+    font: 300 16px $roboto;
+    color: #000000;
+}
+.skill-block {
+    margin-right: 12px;
+}
+.skill-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.skill-input {
+    display: none;
+    & + .skill-fake {
+        border: 1px solid #435993;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        transition: $transition;
+        cursor: pointer;
+        display: block;
+    }
+    &:checked + .skill-fake {
+        background: #435993;
+        background-image: url(../img/correct.svg);
+        background-size: 12px;
+        background-repeat: no-repeat;
+        background-position: 50%,50%;
+    }
+}
+.skill-fake:hover {
+    background: #e9efff;
+}
+/* ========================================== SECTION EXPERIENCE ========================================== */
+
+/* ========================================== SECTION ABOUT ========================================== */
+.section--about .section__title {
+    margin-bottom: 25px;
+}
+.section-intro {
+    text-align: center;
+    color: #1c1c1c;
+    font: 300 16px/24px $roboto;
+    color: #1c1c1c;
+    margin-bottom: 45px;
+}
+.about-textarea {
+    max-width: 520px;
+    width: 100%;
+    height: 180px;
+    resize: none;
+    border: 1px solid #e5e5e5;
+    margin: 0 auto;
+    display: block;
+    outline: none;
+    margin-bottom: 70px;
+    transition: $transition;
+    font: 400 20px $roboto;
+    color: #1c1c1c;
+    padding: 23px 20px;
+    border-radius: 4px;
+    &:focus {
+        border-color: #435993;
+    }
+    &::placeholder {
+        color: #c8c8c8;
+    }
+
+}
+.about-submit {
+    margin: 0 auto;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    max-width: 115px;
+    width: 100%;
+    height: 50px;
+    background: #435993;
+    transition: $transition;
+    color: #fff;
+    font: 300 16px $roboto;
+    border-radius: 8px;
+    &:hover {
+        background: #395dbb;
+    }
+}
+/* ========================================== SECTION ABOUT ========================================== */
+
+/* ========================================== SECTION JS ========================================== */
+.section.section.section--js {
+    margin-bottom: 70px;
+}
+.irs-grid {
+    top: -6px;
+}
+.irs-single , .irs-max , .irs--flat .irs-min, .irs--flat .irs-max{
+    display: none;
+}
+.irs--flat .irs-grid-text {
+    font: 300 13px $roboto;
+    color: #2e211c;
+    text-align: center;
+}
+.irs-grid-pol {
+    height: 19px;
+    background: url(../img/pattern.png) no-repeat center;
+    top: 12px;
+    z-index: 1;
+    &.small {
+        display: none;
+    }
+}
+.irs--flat .irs-bar {
+    background: linear-gradient(90deg, rgba(204,177,241,1) 15%, rgba(67,89,147,1) 70%);
+}
+.irs--flat .irs-bar--single {
+    border-radius: 0;
+}
+.irs--flat .irs-handle {
+    background: url(../img/cursor.png) no-repeat center;
+    width: 23px;
+    height: 26px;
+    top: 45px;
+}
+.irs--flat .irs-handle>i:first-child {
+    display: none;
+}
+.irs-with-grid .irs-grid {
+    width: calc(100% - 11.5px)!important;
+    left: 0!important;
+}
+.irs--flat .irs-grid-text {
+    top: -20px;
+}
+.irs-grid-text.js-grid-text-0 {
+    left: -4px!important;
+    top: -8px;
+    margin-left: 0!important;
+}
+.irs-grid-text.js-grid-text-3 {
+    left: calc(100% - 150px)!important;
+    top: -8px;
+    margin-left: 0!important;
+}
+.irs--flat.irs-with-grid {
+    position: relative;
+    &::before {
+        content: '';
+        width: 100%;
+        height: 11px;
+        background: #ffffff;
+        position: absolute;
+        left: 0;
+        top: 21px;
+        z-index: 1;
+        transform: rotate(-.6deg);
+    }
+}
+.irs--flat .irs-line {
+    width: calc(100% - 11.5px);
+    border-radius: 0;
+}
+/* ========================================== SECTION JS ========================================== */
+
+/* ========================================== STYLEGUIDE ========================================== */
+.styleguide {
+    padding: 90px 0 145px;
+}
+.dropdown-text {
+    color: #2e211c;
+    font: 300 14px $roboto;
+    margin-bottom: 25px;
+}
+.dropdown-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.dropdown-item {
+    flex: 1;
+}
+/* ========================================== STYLEGUIDE ========================================== */
+
+@media screen and (min-width: 1800px) {
+    .main::before {
+        height: 270px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    .skill-form {
+        flex-wrap: wrap;
+    }
+    .skill-list {
+        margin-bottom: 15px;
+        flex-basis: 50%;
+    }
+    .burger {
+        display: flex;
+        outline: none;
+    }
+    .menu {
+        display: none;
+    }
+    .js-slider {
+        overflow: auto;
+        max-width: 768px;
+        height: 130px;
+    }
+    .irs--flat.irs-with-grid {
+        height: 60px;
+        width: 768px;
+        margin-top: 35px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .section--bio__label,.jq-selectbox__select,.section--bio__field {
+        font-size: 16px;
+    }
+}
